@@ -10,9 +10,10 @@ services:
       - traefik
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.flutter-prstart-hu.rule=Host(`flutter.localhost`)"
+      - "traefik.http.routers.flutter-prstart-hu.rule=Host(`flutter.localhost`) || Host(`flutter.prstart.hu`)"
       - "traefik.http.routers.flutter-prstart-hu.entrypoints=websecure"
       - "traefik.http.routers.flutter-prstart-hu.tls=true"
+      - "traefik.http.routers.flutter-prstart-hu.tls.certresolver=myresolver"
       - "traefik.docker.network=traefik"
       - "traefik.http.services.flutter-prstart-hu.loadbalancer.server.port=80"
 
