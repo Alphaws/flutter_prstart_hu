@@ -10,10 +10,16 @@ services:
       - traefik
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.flutter-prstart-hu.rule=Host(`flutter.localhost`) || Host(`flutter.prstart.hu`)"
-      - "traefik.http.routers.flutter-prstart-hu.entrypoints=websecure"
-      - "traefik.http.routers.flutter-prstart-hu.tls=true"
-      - "traefik.http.routers.flutter-prstart-hu.tls.certresolver=myresolver"
+      # Local Router
+      - "traefik.http.routers.flutter-prstart-hu-local.rule=Host(`flutter.localhost`)"
+      - "traefik.http.routers.flutter-prstart-hu-local.entrypoints=websecure"
+      - "traefik.http.routers.flutter-prstart-hu-local.tls=true"
+      # Production Router
+      - "traefik.http.routers.flutter-prstart-hu-prod.rule=Host(`flutter.prstart.hu`)"
+      - "traefik.http.routers.flutter-prstart-hu-prod.entrypoints=websecure"
+      - "traefik.http.routers.flutter-prstart-hu-prod.tls=true"
+      - "traefik.http.routers.flutter-prstart-hu-prod.tls.certresolver=myresolver"
+      # Service binding
       - "traefik.docker.network=traefik"
       - "traefik.http.services.flutter-prstart-hu.loadbalancer.server.port=80"
 
