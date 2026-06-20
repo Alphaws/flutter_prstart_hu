@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter mobilfejlesztés profi módon — Tananyag</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tanulj meg Flutter mobilalkalmazásokat fejleszteni az alapoktól a professzionális szintig ezzel az interaktív 24 hetes tananyaggal.">
+    <meta name="author" content="PRSTART">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Prism.js Syntax Highlighting CSS (Tomorrow Dark Theme) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- HEADER -->
+        <header class="app-header" id="app_header">
+            <div class="header-left">
+                <div class="brand" id="brand_logo" style="cursor: pointer;">
+                    <span class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <div class="brand-text">
+                        <h1>FLUTTER PRO</h1>
+                        <span>prstart.hu</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search_input" placeholder="Keresés a tananyagban (pl. bloc, final, emulátor)...">
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <!-- Theme Toggle -->
+                <button id="theme_toggle" class="icon-btn" aria-label="Sötét/Világos mód váltás">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <!-- Progress Indicator -->
+                <div class="progress-container">
+                    <div class="progress-details">
+                        <span id="progress_percentage">0%</span>
+                        <span class="progress-label">Haladás</span>
+                    </div>
+                    <div class="progress-bar-outer">
+                        <div id="progress_bar_inner" class="progress-bar-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- MAIN CONTAINER -->
+        <div class="main-container">
+            <!-- SIDEBAR NAVIGATION -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h2>Tartalomjegyzék</h2>
+                </div>
+                <nav class="sidebar-nav" id="sidebar_nav">
+                    <div class="loading-sidebar">Fejezetek betöltése...</div>
+                </nav>
+            </aside>
+            
+            <!-- CONTENT AREA -->
+            <main class="content-area">
+                <div class="content-wrapper">
+                    <!-- Dynamic syllabus holder -->
+                    <div id="syllabus_content" class="syllabus-content">
+                        <div class="loading-content">
+                            <i class="fa-solid fa-circle-notch fa-spin"></i>
+                            <p>Tananyag betöltése és feldolgozása folyamatban...</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Marked.js Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Prism.js & Languages for code highlights -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    
+    <!-- App Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
